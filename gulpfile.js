@@ -57,6 +57,11 @@ gulp.task('js',['webpack'],function () {
     .pipe(browserSync.reload({stream:true}))
 })
 
+gulp.task('copy',function () {
+  return gulp.src('./src/static/**',{base:'src'})
+    .pipe(gulp.dest('dist'))
+})
+
 gulp.task('watch',function () {
   gulp.watch('./src/**/*.html', ['fileinclude']);
   gulp.watch('./src/**/*.scss', ['scss']);
@@ -80,6 +85,7 @@ gulp.task('server', function(){
 gulp.task('prod',['clean'],function () {
   gulp.start('fileinclude');
   gulp.start('scss');
+  gulp.start('copy');
   gulp.start('js');
 })
 
