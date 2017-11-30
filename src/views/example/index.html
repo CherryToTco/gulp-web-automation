@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="Zh-cn">
-@@include("../../components/header/head.html")   
+@@include("../../components/head.html")
+
+
 <body>
 	<h3 style="font-size: 30px; padding: 20px;text-align: center">
    整个页面的头部，可以放一些公共的导航栏之类的东西
   </h3>
 	<div class="middle"></div>
-  @@include("../../components/footer/footer.html", {
+  @@include("../../components/footer.html", {
     "title": "整个页面的尾部，可以放一些公共的底部的外链导航，声明之类"
   })
-  <script type="text/javascript" src="./../static/js/jquery3.2.1.min.js"></script>
+
+
+  <script type="text/javascript" src="./../public/js/jquery3.2.1.min.js"></script>
   <script type="text/javascript" src="./bundle.js"></script>
 </body>
 </html>

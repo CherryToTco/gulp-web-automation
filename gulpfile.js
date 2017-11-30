@@ -48,7 +48,7 @@ gulp.task('webpack',function(callback){
 })
 
 gulp.task('minify-img',function () {
-  return gulp.src('./src/static/images/*.{png,jpg,jpeg,gif,ico}',{base:'src'})
+  return gulp.src('./src/public/images/*.{png,jpg,jpeg,gif,ico}',{base:'src'})
     .pipe(plugins.imagemin({
       optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）
       progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
@@ -69,14 +69,14 @@ gulp.task('js',['webpack'],function () {
 })
 
 gulp.task('copy',function () {
-  return gulp.src(['./src/static/**','!./src/static/images/**'],{base:'src'})
+  return gulp.src(['./src/public/**','!./src/public/images/**'],{base:'src'})
     .pipe(gulp.dest('dist'))
 })
 
 gulp.task('watch',function () {
   gulp.watch('./src/**/*.html', ['fileinclude']);
   gulp.watch('./src/**/*.scss', ['scss']);
-  gulp.watch('./src/static/images/**', ['minify-img']);
+  gulp.watch('./src/public/images/**', ['minify-img']);
   gulp.watch('./src/views/**/*.js', ['js']);
   console.log('html,js,scss,img发生了改动');
 })
