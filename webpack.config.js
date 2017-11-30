@@ -1,7 +1,7 @@
 module.exports = {
-  entry: __dirname + "/src/views/demo/demo.js",
+  entry: __dirname + "/src/views/example/example.js",
   output: {
-    path: __dirname + "/src/views/demo",
+    path: __dirname + "/src/views/example",
     filename: "bundle.js"
   },
   // devtool: 'source-map',

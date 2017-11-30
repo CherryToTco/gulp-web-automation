@@ -74,7 +74,7 @@ gulp.task('server', function(){
     server: {
       baseDir: "./dist"
     },
-    startPath: "/demo"
+    startPath: "/example"
   });
   gulp.start('watch');
   console.log('browser-sync服务启动成功')
